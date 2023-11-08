@@ -18,7 +18,7 @@ const Card = ()=>{
             setError(null)
             if(city === "") throw new Error("city name required")
             if(city.includes(' ')) throw new Error("city cannot contain spaces")
-            const specialCharacterRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\]/;
+            const specialCharacterRegex = /[!@#$%^&*()_+{}[\]:;<>,.?~\\]/;
             if (specialCharacterRegex.test(city)) {
               throw new Error("city name cannot contain special characters");
             }
