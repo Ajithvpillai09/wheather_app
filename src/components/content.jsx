@@ -4,7 +4,7 @@ import { BASE_URL} from "../assets/config"
 import getImage from "../utils/useGetImage";
 
 const Content = ({data})=>{
-
+          
       const img = data && getImage(data?.weather[0]?.main)
     return(
         <div className="weather">
