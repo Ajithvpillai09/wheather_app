@@ -17,7 +17,7 @@ const Card = ()=>{
         try {
             setError(null)
             if(city === "") throw new Error("city name required")
-            if(city.includes(' ')) throw new Error("city cannot contain spaces")
+            // if(city.includes(' ')) throw new Error("city cannot contain spaces")
             const specialCharacterRegex = /[!@#$%^&*()_+{}[\]:;<>,.?~\\]/;
             if (specialCharacterRegex.test(city)) {
               throw new Error("city name cannot contain special characters");
@@ -37,7 +37,7 @@ const Card = ()=>{
         console.log(res);
         setData(res.data)
        } catch (err) {
-        console.log(err);
+        console.log(err,"ttttttttt");
         toast.error(err.response.data.message  ||  err.message)
        }
     }
