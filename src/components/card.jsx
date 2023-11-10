@@ -6,12 +6,14 @@ import { useState } from "react"
 import axios from "axios"
 import {toast} from 'react-toastify'
 import { Input } from "@nextui-org/react";
+// import useIsOnline from "../utils/useIsOnline"
 
 const Card = ()=>{
 
     const [city,setCity] = useState('')
     const [data,setData] = useState(null)
     const [error,setError] = useState(null)
+    // const isOnline = useIsOnline()
 
     function validation(){
         try {
@@ -34,15 +36,16 @@ const Card = ()=>{
             throw new Error("please clear all error") 
         }
         const res = await axios.get(`${WEATHER_URL}?q=${city}&appid=${API_KEY}&units=metric`)
-        console.log(res);
         setData(res.data)
        } catch (err) {
-        console.log(err,"ttttttttt");
         toast.error(err.response.data.message  ||  err.message)
        }
     }
     return(
         <section className="card">
+            {/* <div className="online">
+                <h1>{isOnline ? '✅' : '❌'}</h1>
+            </div> */}
             <div className="search">
                 <Input
                  type="text" 
