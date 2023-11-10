@@ -2,12 +2,11 @@ import express from 'express'
 import dotenv from 'dotenv'
 import http from 'http'
 import path from 'path'
-// const port = import.meta.env.VITE_WEATHER_URL
-// const env =import.meta.env.VITE_ENV
 const env ="production"
 
 
 dotenv.config()
+
 
 const app = express()
 const server = http.createServer(app)
